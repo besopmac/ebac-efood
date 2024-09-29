@@ -1,10 +1,14 @@
+import Footer from './components/Footer'
+import Header from './components/Header'
 import { GlobalStyle } from './styles'
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <div>efood</div>
+      <Header />
+      <div>[ container ]</div>
+      <Footer />
     </>
   )
 }
