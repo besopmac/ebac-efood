@@ -1,16 +1,26 @@
 import { styled } from 'styled-components'
 import { colors } from '../../styles'
+import { Props } from '.'
 
 import background from '../../assets/images/fundo.png'
 
-export const HeaderWrapper = styled.header`
-  gap: 140px;
+export const HeaderWrapper = styled.header<Props>`
   display: flex;
   align-items: center;
   color: ${colors.red};
-  padding: 30px 0 40px;
   flex-direction: column;
   background: url(${background}) top left repeat;
+  gap: ${(props) => (props.type === 'home' ? '140px' : '0')};
+  padding: ${(props) =>
+    props.type === 'home' ? '30px 0 40px' : '30px 0 60px'};
+
+  > div {
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+  }
 `
 
 export const Logo = styled.img`

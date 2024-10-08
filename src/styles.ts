@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
   red: '#E66767',
-  white: '#FFF8F2',
+  cream: '#FFF8F2',
+  white: '#ffffff',
   yellow: '#FFB930'
 }
 
@@ -13,5 +14,15 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
+  }
+
+  body {
+    background-color: ${colors.cream};
+  }
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1024px;
   }
 `
