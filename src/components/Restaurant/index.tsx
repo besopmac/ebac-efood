@@ -20,7 +20,13 @@ type Props = {
   categories: string[]
 }
 
-const Restaurant = ({ title, image, rating, description, categories }: Props) => {
+const Restaurant = ({
+  title,
+  image,
+  rating,
+  description,
+  categories
+}: Props) => {
   return (
     <Card>
       <Image src={image} title={title} />
