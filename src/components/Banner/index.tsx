@@ -1,16 +1,16 @@
-import { Container, BannerWrapper, Subtitle, Title } from './styles'
+import { Container, BannerWrapper, Type, Title } from './styles'
 
 export type Props = {
   background: string
-  subtitle: string
   title: string
+  type: string
 }
 
-const Banner = ({ background, subtitle, title }: Props) => {
+const Banner = ({ background, type, title }: Props) => {
   return (
     <Container background={background}>
       <BannerWrapper>
-        <Subtitle>{subtitle}</Subtitle>
+        <Type>{type}</Type>
         <Title>{title}</Title>
       </BannerWrapper>
     </Container>
