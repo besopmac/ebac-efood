@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 import { Props } from '.'
 
-export const Container = styled.div<Omit<Props, 'title' | 'subtitle'>>`
+export const Container = styled.div<Omit<Props, 'title' | 'type'>>`
   width: 100%;
   height: 280px;
   position: relative;
@@ -36,8 +36,9 @@ export const BannerWrapper = styled.div`
   flex-direction: column;
 `
 
-export const Subtitle = styled.h4`
+export const Type = styled.h4`
   font-weight: 100;
+  text-transform: capitalize;
 `
 
 export const Title = styled.h3`

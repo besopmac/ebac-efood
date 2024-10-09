@@ -1,18 +1,18 @@
-import RestaurantModel from '../../models/Restaurant'
-import Restaurant from '../Restaurant'
+import { Restaurante } from '../../types/Restaurante'
+import RestaurantCard from '../Restaurant'
 
 import { Container, List } from './styles'
 
 export type Props = {
-  restaurants: RestaurantModel[]
+  restaurantes: Restaurante[]
 }
 
-const RestaurantList = ({ restaurants }: Props) => {
+const RestaurantList = ({ restaurantes }: Props) => {
   return (
     <Container>
       <List>
-        {restaurants.map((restaurant) => (
-          <Restaurant key={restaurant.id} {...restaurant} />
+        {restaurantes.map((restaurante) => (
+          <RestaurantCard key={restaurante.id} restaurante={restaurante} />
         ))}
       </List>
     </Container>

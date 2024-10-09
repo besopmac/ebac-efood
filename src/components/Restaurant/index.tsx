@@ -1,3 +1,4 @@
+import { Restaurante } from '../../types/Restaurante'
 import {
   Card,
   Title,
@@ -9,40 +10,32 @@ import {
   Description,
   CardInfoHeader
 } from './styles'
+
 import star from '../../assets/images/star.svg'
 import Tag from '../Tag'
 
 type Props = {
-  title: string
-  image: string
-  rating: number
-  description: string
-  categories: string[]
+  restaurante: Restaurante
 }
 
-const Restaurant = ({
-  title,
-  image,
-  rating,
-  description,
-  categories
-}: Props) => {
+const Restaurant = ({ restaurante }: Props) => {
   return (
     <Card>
-      <Image src={image} title={title} />
+      <Image src={restaurante.capa} title={restaurante.titulo} />
       <Categories>
-        {categories.map((category) => (
-          <Tag key={category}>{category}</Tag>
-        ))}
+        {restaurante.destacado && <Tag>Destaque da semana</Tag>}
+        <Tag>{restaurante.tipo}</Tag>
       </Categories>
       <CardInfo>
         <CardInfoHeader>
-          <Title>{title}</Title>
-          <Rating>{rating}</Rating>
+          <Title>{restaurante.titulo}</Title>
+          <Rating>{restaurante.avaliacao}</Rating>
           <img src={star} alt="" />
         </CardInfoHeader>
-        <Description>{description}</Description>
-        <ButtonLink to={'/categories'}>Saiba mais</ButtonLink>
+        <Description>{restaurante.descricao}</Description>
+        <ButtonLink to={`/restaurante/${restaurante.id}`}>
+          Saiba mais
+        </ButtonLink>
       </CardInfo>
     </Card>
   )
