@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 import { colors } from '../../styles'
 
@@ -28,7 +27,9 @@ export const Description = styled.p`
   line-height: 22px;
 `
 
-export const ButtonLink = styled(Link)`
+export const Button = styled.button`
+  border: none;
+  cursor: pointer;
   font-size: 14px;
   font-weight: 700;
   padding: 4px 6px;
