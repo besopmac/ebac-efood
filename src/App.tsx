@@ -4,6 +4,8 @@ import { GlobalStyle } from './styles'
 import Rotas from './routes'
 
 import Footer from './components/Footer'
+import Cart from './components/Cart'
+
 import { store } from './store'
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
         <GlobalStyle />
         <Rotas />
         <Footer />
+        <Cart />
       </BrowserRouter>
     </Provider>
   )

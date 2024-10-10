@@ -1,12 +1,22 @@
 import { HeaderWrapper, Title, Logo } from './styles'
 import logo from '../../assets/images/logo.svg'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { open } from '../../store/reducers/cart'
+import { RootReducer } from '../../store'
 
 export type Props = {
   type: 'home' | 'internal'
 }
 
 const Header = ({ type }: Props) => {
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
   return (
     <HeaderWrapper type={type}>
       {type === 'home' ? (
@@ -21,7 +31,7 @@ const Header = ({ type }: Props) => {
             <Link to={'/'}>
               <Logo src={logo} alt="eFood" />
             </Link>
-            <p>0 produto(s) no carrinho</p>
+            <p onClick={openCart}>{items.length} produto(s) no carrinho</p>
           </div>
         </>
       )}
