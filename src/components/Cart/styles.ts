@@ -4,6 +4,15 @@ import { Button } from '../Food/styles'
 
 import trash from '../../assets/images/trash.svg'
 
+type RowProps = {
+  gutter?: boolean
+}
+
+type InputProps = {
+  size?: string
+  gutter?: boolean
+}
+
 export const Overlay = styled.div`
   top: 0;
   left: 0;
@@ -85,4 +94,51 @@ export const CardTotal = styled.p`
   font-weight: bold;
   margin: 32px 0 16px;
   justify-content: space-between;
+`
+
+export const Card = styled.div`
+  display: flex;
+  margin-bottom: 24px;
+  flex-direction: column;
+
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+`
+
+export const Row = styled.div<RowProps>`
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+`
+
+export const InputGroup = styled.div<InputProps>`
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  flex-grow: ${(props) => (props.size ? 0 : 1)};
+  max-width: ${(props) =>
+    props.size ? `calc(${props.size}% - 15px)` : '100%'};
+
+  label {
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  input {
+    height: 32px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid ${colors.cream};
+    background-color: ${colors.cream};
+  }
+`
+
+export const Action = styled.div`
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
 `
