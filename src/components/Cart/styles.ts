@@ -106,6 +106,15 @@ export const Card = styled.div`
     font-weight: bold;
     margin-bottom: 16px;
   }
+
+  p {
+    font-size: 14px;
+    line-height: 22px;
+
+    + p {
+      margin-top: 24px;
+    }
+  }
 `
 
 export const Row = styled.div<RowProps>`
