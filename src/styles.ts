@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
   red: '#E66767',
+  gray: '#a0a0a0',
   cream: '#FFF8F2',
   white: '#ffffff',
   yellow: '#FFB930'

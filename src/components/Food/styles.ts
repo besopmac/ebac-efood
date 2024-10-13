@@ -38,4 +38,9 @@ export const Button = styled.button`
   color: ${colors.red};
   text-decoration: none;
   background-color: ${colors.cream};
+
+  &:disabled {
+    cursor: not-allowed;
+    color: rgba(230, 103, 103, 0.25);
+  }
 `
