@@ -5,6 +5,7 @@ import { useGetRestauranteQuery } from '../../services/api'
 import Banner from '../../components/Banner'
 import Header from '../../components/Header'
 import Cardapio from '../../components/Cardapio'
+import Loader from '../../components/Loader'
 
 const Restaurante = () => {
   const { id } = useParams()
@@ -26,7 +27,7 @@ const Restaurante = () => {
     )
   }
 
-  return <h4>Carregando...</h4>
+  return <Loader />
 }
 
 export default Restaurante

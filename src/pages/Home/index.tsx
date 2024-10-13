@@ -1,10 +1,11 @@
 import Header from '../../components/Header'
+import Loader from '../../components/Loader'
 import RestaurantList from '../../components/RestaurantList'
 
 import { useGetRestaurantesQuery } from '../../services/api'
 
 const Home = () => {
-  const { data: restaurantes } = useGetRestaurantesQuery()
+  const { data: restaurantes, isLoading } = useGetRestaurantesQuery()
 
   if (restaurantes) {
     return (
@@ -17,7 +18,7 @@ const Home = () => {
     )
   }
 
-  return <h4>Carregando...</h4>
+  return <Loader />
 }
 
 export default Home

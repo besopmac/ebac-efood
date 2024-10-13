@@ -3,6 +3,10 @@ export type Product = {
   price: number
 }
 
+export type PurchaseResponse = {
+  orderId: string
+}
+
 export type PurchasePayload = {
   products: Product[]
   delivery: {
